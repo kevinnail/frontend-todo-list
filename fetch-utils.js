@@ -57,13 +57,10 @@ export async function signInUser(email, password) {
 }
 
 export async function signOutUser() {
-    console.log('signOutUser fired!!');
-
     const resp = await fetch(`${BASE_URL}/api/v1/users/sessions`, {
         method: 'DELETE',
         credentials: 'include',
     });
-    console.log('resp from signOutUser', resp);
 
     if (resp.ok) {
         location.replace('/auth');
@@ -73,7 +70,7 @@ export async function signOutUser() {
 /* Data functions */
 
 export async function fetchBlogs() {
-    const resp = await fetch(`${BASE_URL}/api/v1/blogs`, {
+    const resp = await fetch(`${BASE_URL}/api/v1/todos`, {
         method: 'GET',
         headers: {
             Accept: 'application/json',
