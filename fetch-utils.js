@@ -114,6 +114,18 @@ export async function toggleComplete(mark, todo_id) {
     });
 
     const msg = await resp.json();
-    // console.log('msg.message', msg.message);
+    return msg;
+}
+export async function deleteById(todo_id) {
+    const resp = await fetch(`${BASE_URL}/api/v1/todos/:id`, {
+        method: 'DELETE',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ todo_id }),
+        credentials: 'include',
+    });
+    const msg = await resp.json();
     return msg;
 }

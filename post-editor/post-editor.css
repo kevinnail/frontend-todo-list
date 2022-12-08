@@ -1,0 +1,11 @@
+.email {
+    font-weight: bold;
+    font-size: 2rem;
+    color: blueviolet;
+}
+
+.email-login {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+}

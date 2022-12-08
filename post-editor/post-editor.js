@@ -8,12 +8,15 @@ const toDoForm = document.getElementById('todo-form');
 const taskButton = toDoForm.querySelector('button');
 const taskInput = toDoForm.querySelector('input');
 const posted = toDoForm.querySelector('p');
+const emailLogin = document.getElementById('email-login');
 let user = null;
 
 // Events
 
 window.addEventListener('load', async () => {
     user = await getUser();
+
+    emailLogin.innerHTML = `You are logged in with: <br/><span class="email">${user.email}</span>`;
 });
 
 toDoForm.addEventListener('submit', async (e) => {

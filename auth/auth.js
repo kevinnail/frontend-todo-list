@@ -50,14 +50,12 @@ authForm.addEventListener('submit', async (e) => {
     const formData = new FormData(authForm);
 
     let response = null;
-
+    let error = null;
     if (isSignIn) {
         response = await signInUser(formData.get('email'), formData.get('password'));
     } else {
         response = await signUpUser(formData.get('email'), formData.get('password'));
     }
-
-    const error = response.error;
 
     if (error) {
         // display the error and reset the button to be active
