@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- metadata -->
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-        <!-- title and favicon -->
-        <title>To Do List</title>
         <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
 
-        <!-- js -->
         <script
             defer
             src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
         ></script>
-        <script type="module" src="app.js"></script>
+        <script type="module" src="post-editor.js"></script>
 
-        <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -25,11 +19,10 @@
             href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
         />
 
-        <!-- css -->
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/global.css" />
-        <link rel="stylesheet" href="/styles/style.css" />
-        <!-- add link for page specific css -->
+        <link rel="stylesheet" href="/styles/form.css" />
+        <title>To Do List</title>
     </head>
 
     <body>
@@ -37,13 +30,23 @@
             <p class="title">To Do List</p>
             <nav>
                 <a href="/">Home</a>
-                <a href="/post-editor">Create New Task</a>
                 <a id="sign-out-link" href="auth">Sign Out</a>
             </nav>
         </header>
 
         <main>
-            <ul id="todo-list"></ul>
+            <form id="todo-form">
+                <h2>Create new task</h2>
+
+                <label>
+                    New task:
+                    <input type="text" name="task-description" required />
+                </label>
+                <button>Post New Task</button>
+                <a href="/">Take me to my to do's!</a>
+                <p class="posted"></p>
+                <a href=""></a>
+            </form>
         </main>
     </body>
 </html>

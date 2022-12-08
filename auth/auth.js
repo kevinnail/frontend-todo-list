@@ -57,7 +57,6 @@ authForm.addEventListener('submit', async (e) => {
         response = await signUpUser(formData.get('email'), formData.get('password'));
     }
 
-    console.log('isSignIn from auth.js', isSignIn);
     const error = response.error;
 
     if (error) {

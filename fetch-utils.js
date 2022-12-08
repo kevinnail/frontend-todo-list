@@ -79,10 +79,41 @@ export async function fetchBlogs() {
         credentials: 'include',
     });
     const data = await resp.json();
+
     if (resp.ok) {
         return data;
     } else {
         // eslint-disable-next-line no-console
         console.error(data.message);
     }
+}
+
+export async function postToDo(task, user_Id) {
+    const resp = await fetch(`${BASE_URL}/api/v1/todos`, {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ task, user_Id }),
+        credentials: 'include',
+    });
+    const msg = await resp.json();
+    return msg;
+}
+
+export async function toggleComplete(mark, todo_id) {
+    const resp = await fetch(`${BASE_URL}/api/v1/todos/:id`, {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ mark, todo_id }),
+        credentials: 'include',
+    });
+
+    const msg = await resp.json();
+    // console.log('msg.message', msg.message);
+    return msg;
 }

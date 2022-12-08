@@ -1,0 +1,32 @@
+ul {
+    display: grid;
+    justify-content: center;
+    gap: 10px;
+    margin: auto auto;
+}
+li {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    width: 800px;
+    border: 1px solid black;
+    box-shadow: 0px 0px 15px 0px black;
+    padding: 0rem 1.5rem;
+    color: white;
+    background: linear-gradient(
+            90deg,
+            rgba(2, 0, 36, 1) 0%,
+            rgba(9, 9, 121, 1) 10%,
+            rgb(0, 102, 255)
+        )
+        100%;
+}
+li:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 15px 0px white;
+    transition: 250ms;
+}
+.completed {
+    background: rgb(126, 126, 126);
+    transform: scale(0.8);
+    transition: 250ms;
+}

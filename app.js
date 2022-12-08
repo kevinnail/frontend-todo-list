@@ -16,6 +16,7 @@ async function displayTodos() {
 
     for (const todoEl of todos) {
         let li = renderTodos(todoEl);
+
         todoList.append(li);
     }
 }
