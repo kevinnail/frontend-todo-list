@@ -103,7 +103,7 @@ export async function postToDo(task, user_Id) {
 }
 
 export async function toggleComplete(mark, todo_id) {
-    const resp = await fetch(`${BASE_URL}/api/v1/todos/:id`, {
+    const resp = await fetch(`${BASE_URL}/api/v1/todos/${todo_id}`, {
         method: 'PUT',
         headers: {
             Accept: 'application/json',
