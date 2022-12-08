@@ -1,7 +1,7 @@
 /* Imports */
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
-import { fetchBlogs, getUser } from './fetch-utils.js';
+import { deleteById, fetchTodos, getUser } from './fetch-utils.js';
 import { renderTodos } from './render-utils.js';
 
 /* Get DOM Elements */
@@ -19,18 +19,18 @@ window.addEventListener('load', async () => {
 
 /* Display Functions */
 async function displayTodos() {
-    const todos = await fetchBlogs();
+    const todos = await fetchTodos();
 
     for (const todoEl of todos) {
         const btn = document.createElement('p');
         btn.textContent = 'Delete';
         btn.classList.add('delete-button');
-        btn.addEventListener('click', () => {
-            const x = confirm('ARE YOU SURE YOU WANT TO DELETE YOUR TO DO THE WORLD MIGHT END');
+        btn.addEventListener('click', async () => {
+            const x = confirm('ARE YOU SURE YOU WANT TO DELETE YOUR TO DO?');
             if (x) {
-                alert('YOUR DATA WAS DELETED AND NOW YOU WILL BE HOMELESS');
-            } else {
-                alert('noooooooooooooo');
+                await deleteById(todoEl.id);
+                todoList.innerHTML = '';
+                await displayTodos();
             }
         });
 

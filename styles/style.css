@@ -51,11 +51,13 @@ li:hover {
     justify-content: center;
     align-items: center;
     background-color: rgb(255, 125, 125);
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     padding: 0px 30px;
     border: 1px solid white;
+    height: 2rem;
 }
 .delete-button:hover {
     background-color: red;
     cursor: pointer;
+    color: white;
 }

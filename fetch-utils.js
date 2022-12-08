@@ -69,7 +69,7 @@ export async function signOutUser() {
 
 /* Data functions */
 
-export async function fetchBlogs() {
+export async function fetchTodos() {
     const resp = await fetch(`${BASE_URL}/api/v1/todos`, {
         method: 'GET',
         headers: {
@@ -117,15 +117,16 @@ export async function toggleComplete(mark, todo_id) {
     return msg;
 }
 export async function deleteById(todo_id) {
-    const resp = await fetch(`${BASE_URL}/api/v1/todos/:id`, {
+    const resp = await fetch(`${BASE_URL}/api/v1/todos/${todo_id}`, {
         method: 'DELETE',
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ todo_id }),
+        // body: JSON.stringify({ todo_id }),
         credentials: 'include',
     });
     const msg = await resp.json();
+
     return msg;
 }
