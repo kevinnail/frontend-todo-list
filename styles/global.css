@@ -15,7 +15,8 @@ body {
     height: 100vh;
     font-family: var(--primary-font);
     color: var(--text-color);
-    background: var(--background);
+    background: linear-gradient(90deg, rgb(0, 94, 255), rgba(9, 9, 121, 1), rgb(9, 0, 189));
+    /* background: var(--background); */
     display: grid;
     grid-template-rows: auto 1fr;
 }
@@ -28,9 +29,11 @@ body {
 
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20%;
 
-    background-color: var(--header-background);
+    /* background-color: var(--header-background); */
+    background-color: black;
+    color: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
@@ -48,7 +51,23 @@ body {
     display: flex;
     gap: 10px;
 }
+.page-header a {
+    text-decoration: none;
+    color: white;
+    transition: 400ms;
+}
 
+.page-header a.nav-link {
+    min-width: 125px;
+}
+.page-header a.nav-link2 {
+    min-width: 65px;
+}
+
+.page-header a:hover {
+    transform: scale(1.05);
+    transition: 400ms;
+}
 main {
     padding: 20px;
 }
@@ -68,4 +87,20 @@ main {
 
 .hidden {
     display: none;
+}
+
+.email {
+    font-weight: bold;
+    font-size: 2rem;
+    color: blueviolet;
+}
+
+.email-login {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+}
+
+.email-p-1 {
+    min-width: 170px;
 }
