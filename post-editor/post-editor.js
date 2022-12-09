@@ -16,7 +16,7 @@ let user = null;
 window.addEventListener('load', async () => {
     user = await getUser();
 
-    emailLogin.innerHTML = `You are logged in with: <br/><span class="email">${user.email}</span>`;
+    emailLogin.innerHTML = `<p class="email-p-1">You are logged in with: <p><br/><span class="email">${user.email}</span>`;
 });
 
 toDoForm.addEventListener('submit', async (e) => {

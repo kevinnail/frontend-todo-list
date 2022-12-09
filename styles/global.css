@@ -56,6 +56,14 @@ body {
     color: white;
     transition: 400ms;
 }
+
+.page-header a.nav-link {
+    min-width: 125px;
+}
+.page-header a.nav-link2 {
+    min-width: 65px;
+}
+
 .page-header a:hover {
     transform: scale(1.05);
     transition: 400ms;
@@ -79,4 +87,20 @@ main {
 
 .hidden {
     display: none;
+}
+
+.email {
+    font-weight: bold;
+    font-size: 2rem;
+    color: blueviolet;
+}
+
+.email-login {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+}
+
+.email-p-1 {
+    min-width: 170px;
 }

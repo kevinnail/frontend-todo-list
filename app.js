@@ -14,7 +14,7 @@ const emailLogin = document.getElementById('email-login');
 window.addEventListener('load', async () => {
     let user = await getUser();
 
-    emailLogin.innerHTML = `You are logged in with: <br/><span class="email">${user.email}</span>`;
+    emailLogin.innerHTML = `<p class="email-p-1">You are logged in with: <p><br/><span class="email">${user.email}</span>`;
 });
 
 /* Display Functions */

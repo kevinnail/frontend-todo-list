@@ -34,7 +34,7 @@ li:hover {
     transition: 250ms;
 }
 
-.email {
+/* .email {
     font-weight: bold;
     font-size: 2rem;
     color: blueviolet;
@@ -43,8 +43,12 @@ li:hover {
 .email-login {
     display: flex;
     justify-content: space-between;
-    width: 25%;
+    width: 500px;
 }
+
+.email-p-1 {
+    min-width: 170px;
+} */
 
 .delete-button {
     display: flex;
