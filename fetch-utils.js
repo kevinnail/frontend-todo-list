@@ -1,4 +1,5 @@
-const BASE_URL = 'https://to-do-list-kn.herokuapp.com';
+// const BASE_URL = 'https://to-do-list-kn.herokuapp.com';
+const BASE_URL = 'http://localhost:7890';
 /* Auth related functions */
 
 export async function getUser() {
@@ -48,6 +49,7 @@ export async function signInUser(email, password) {
     });
 
     const data = await resp.json();
+
     if (resp.ok) {
         location.replace('/');
     } else {
